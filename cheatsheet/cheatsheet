@@ -1,1 +1,6 @@
 ### from itertools import *
+
+## Usage of lambda ##
+
+S=map(lambda t: sum(i**2 for i in t)%m, product(*L))
+where L is a list
