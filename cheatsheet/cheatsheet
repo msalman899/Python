@@ -12,9 +12,9 @@ where L is a list
 [f(x) if condition else g(x) for x in sequence]
 [unicode(x.strip()) if x is not None else '' for x in row]
 
-*## Collections (from collections import *) ##*
+## Collections (from collections import *) ##
 
-- defaultdict
+-- defaultdict
 
 from collections import defaultdict
 d = defaultdict(list)
@@ -29,7 +29,7 @@ This prints:
 ('python', ['awesome', 'language'])
 ('something-else', ['not relevant'])
 
-- Sample program
+-- Sample program
 
 from collections import *
 
