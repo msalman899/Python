@@ -1,3 +1,44 @@
+## getattr method ##
+
+This is used to call attributes for the given object
+syntax --> getattr(obj,attribute,default)
+
+For example:
+getattr(Student,"Student_gpa","3.0") --> Student.Student_gpa
+getattr(d,cmd)(*(map(int,arg))) --> d.append(1) or d.append(2,3)
+
+-- Sample program
+
+n=int(input())
+if n > 0 and n < 20:
+    s=set(map(int,(input().split()) ) )
+    N=int(input())
+    for i in range(N):
+        command, *args = input().split()
+        getattr(s,command)(*map(int,args))
+
+    print(sum(s))
+    
+Input --
+
+9
+1 2 3 4 5 6 7 8 9
+10
+pop
+remove 9
+discard 9
+discard 8
+remove 7
+pop 
+discard 6
+remove 5
+pop 
+discard 5
+
+OutPut --
+
+4
+
 ## itertools (from itertools import * ) ##
 
 
