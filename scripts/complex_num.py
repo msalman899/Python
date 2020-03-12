@@ -21,10 +21,12 @@ class Complex:
         return Complex(pow(self.real**2+self.imaginary**2, 0.5), 0)
 
     def __str__(self):
+        result = "{0:.2f}{1:+.2f}i".format(self.real,self.imaginary)
+        return result
 
 if __name__ == '__main__':
-    c = map(float, input().split())
-    d = map(float, input().split())
+    c = map(float, input().split()) #c=(2,1)
+    d = map(float, input().split()) #c=(5,6)
     x = Complex(*c)
     y = Complex(*d)
 
