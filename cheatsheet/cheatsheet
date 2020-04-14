@@ -216,3 +216,44 @@ MARKS      CLASS      NAME       ID
 Output -
 78.00
 81.00
+
+## Decorators ##
+https://www.geeksforgeeks.org/decorators-in-python/
+
+-- Sample program 
+
+import re
+
+def wrapper(f):
+    def fun(l):
+        m = [ "+91"+ " " + i[len(i)-10:len(i)-5] + " " + i[len(i)-5:] for i in l if re.match(r'^\+?\d+$',i)]
+        f(m)  # this will call sort_phone func
+    return fun
+
+@wrapper  # sort_phone = wrapper(sort_phone(l)); # sort_phone = fun
+def sort_phone(l):
+    print(*sorted(l), sep='\n')
+
+if __name__ == '__main__':
+    l = [input() for _ in range(int(input()))]
+    sort_phone(l)  # sort_phone(l) = fun(l)
+    
+
+input -
+8
+07895462130
+919875641230
+9195969878ty
++919596987845
+/9195969878345
+45689024567
+7845120369
+9198785623
+
+output -
++91 56890 24567
++91 78451 20369
++91 78954 62130
++91 91987 85623
++91 95969 87845
++91 98756 41230
