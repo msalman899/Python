@@ -1,0 +1,25 @@
+# Creating python virtual environment via traditional way
+
+python(3) -m venv myproject       # this will create a virtual env "myproject"
+source myproject/bin/activate  # this will activate the virtual env (you are now in virtual env)
+deactivate                     # this will get you out of venv 
+rm -rf myproject               # deleting the venv dir will remove the venv
+
+pip freeze > requirements.txt    # this will create a file with all the packages currently being used in the venv
+pip install -r requirements.txt  # you can run this in any of new vnenv and install all of the packages in requirements.txt
+
+# Creating python virtual environment via recommended way "pipenv"
+
+python(3) -m venv myproject       # this will create a virtual env "myproject"
+source myproject/bin/activate  # this will activate the virtual env (you are now in virtual env)
+deactivate                     # this will get you out of venv 
+rm -rf myproject               # deleting the venv dir will remove the venv
+
+pip freeze > requirements.txt    # this will create a file with all the packages currently being used in the venv
+pip install -r requirements.txt  # you can run this in any of new vnenv and install all of the packages in requirements.txt
+
+Tips:
+1 - Never put your code in venv because you can renmove venv any time if needed. venv is just like an environment where you can run your code with some certain packages versions.
+e.g 
+My_Project
+ - 
