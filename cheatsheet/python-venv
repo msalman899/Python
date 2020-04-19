@@ -12,10 +12,9 @@ pip install -r requirements.txt  # you can run this in any of new vnenv and inst
 
 # Creating python virtual environment via recommended way "pipenv"
 
-    # this will create a virtual env "myproject"
-pipenv shell                   # this will activate the virtual env (you are now in virtual env)
+pipenv install django==2.1     # this will create a virtual env with name = "current directory"
+pipenv shell                   # this will activate the virtual env (one venv per shell)
 exit                           # this will get you out of venv 
-              # deleting the venv dir will remove the venv
 
 
 Tips:
