@@ -1,0 +1,43 @@
+## Problem
+There's a string provided, we need to count the number of index/char between a subset of 2  string. The subset string will be "programmer" but it can be rephrased. in other words an index "i" will be count if both s[0:i-1] and s[i+1:n-1] subsets has enough char to make a string "programmer"
+e.g 
+rtprrgoammerfpxprogrmmamerdr --> 'rtprrgoamme'rfpx'progrmmamer'dr --> 4
+programmerprogrammer --> 'programmer''programmer' --> 0
+prxogrxammxexrxxprogrxamxmxer --> prxogrxammxexr'xx'progrxamxmxer --> 2 
+
+## Solution
+
+totalstrings=int(input())
+
+for _ in range(totalstrings):
+    s=input()
+    n=len(s)
+    ind=0
+
+    print("org string" , s)
+    for i in range(0+5,n-5):
+        left="False"
+        right="False"
+        print(i , s[0:i]  , s[i+1:n])
+    
+        str=['p','r','o','g','r','a','m','m','e','r']
+        for c in s[0:i]:
+            if c in str:
+                str.remove(c)
+    
+        if len(str) == 0:
+            left="True"
+        
+        str=['p','r','o','g','r','a','m','m','e','r']
+        for c in s[i+1:n]:
+            if c in str:
+                str.remove(c)
+    
+        if len(str) == 0:
+            right="True"
+        
+        print(left, right)
+        if left == "True" and right == "True":
+            ind += 1
+    print(ind)
+    
