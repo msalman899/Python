@@ -1,0 +1,14 @@
+1 - Match keyvalue pair in url i.e. "key1=value1; key2=value2" or "key1=value1; key2=value2; key3=value3"
+regex="(\w+=\w+;\s)*(\w+=\w+)"
+
+"key1=value1; key2=value2"  -- Matched
+"key1=value1; key2=value2;"
+"key1=value1; key2:value2;"
+"key1=value1;key2=value2"
+"key1'value1; key2=valu'e2; key3=value3;][ key4=value4"
+"key1=value1: key2=value2: key3;value3"
+"key1=value1;;;"
+"key1=value1;"
+"key1=value1"  -- Matched
+"key1=value1; key2=value2; key3=value3; key4=value4"  -- Matched
+"key1=value1; key2=value2; key3=value3' key4=value4"
