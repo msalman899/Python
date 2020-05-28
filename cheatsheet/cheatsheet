@@ -257,3 +257,23 @@ output -
 +91 91987 85623
 +91 95969 87845
 +91 98756 41230
+
+
+## time,date and formatting ##
+
+good read .. https://www.guru99.com/date-time-and-datetime-classes-in-python.html
+
+t = datetime.strptime(s,'%I:%M:%S%p') --> this will convert string into datetime object
+t.strftime("%H:%M:%S") --> this will do the formatting (from 12hr to 24hour format)
+
+#Times and dates can be formatted using a set of predefined string
+#Control codes
+now= datetime.now() #get the current date and time
+#%c - local date and time, %x-local's date, %X- local's time
+print(now.strftime("%c"))
+print(now.strftime("%x"))
+print(now.strftime("%X"))
+##### Time Formatting ####
+#%I/%H - 12/24 Hour, %M - minute, %S - second, %p - local's AM/PM
+print(now.strftime("%I:%M:%S %p")) # 12-Hour:Minute:Second:AM
+print(now.strftime("%H:%M")) # 24-Hour:Minute
