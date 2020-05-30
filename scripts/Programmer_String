@@ -41,3 +41,34 @@ for _ in range(totalstrings):
             ind += 1
     print(ind)
     
+--- Improved
+
+
+def check(subset):
+    str=[i for i in "programmer"]
+    status="False"
+    for c in subset:
+        if c in str:
+            str.remove(c)
+    
+    if len(str) == 0:
+        status="True"
+    return status
+
+totalstrings=int(input())
+
+for _ in range(totalstrings):
+    s=input()
+    n=len(s)
+    ind=0
+
+    #print("org string" , s)
+    for i in range(0+5,n-5):
+        #print(i , s[0:i]  , s[i+1:n])
+        left=check(s[0:i])
+        right=check(s[i+1:n])
+        
+        #print(left, right)
+        if left == "True" and right == "True":
+            ind += 1
+    print(ind)
