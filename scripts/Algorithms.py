@@ -16,3 +16,31 @@ if __name__ == '__main__':
     arr = list(map(int, input().rstrip().split()))
 
     insertionSort2(n, arr)
+
+# Quick Sort Algorithm
+
+
+def quicksort(arr):
+    left,equal,right=[],[],[]
+    key=arr[0]
+    for i in range(len(arr)):
+        if arr[i] < key:
+            left.append(arr[i])
+        elif arr[i] == key:
+            equal.append(arr[i])
+        else:
+            right.append(arr[i])
+
+    if len(left) > 1: quicksort(left)
+    if len(right) > 1: quicksort(right)
+
+    for i in range(len(left+equal+right)):
+        arr[i] = (left+equal+right)[i]
+    #print(*arr)
+
+if __name__ == '__main__':
+    n=input()
+    arr=list(map(int,input().split()))
+    print("Given:" , arr)
+    quicksort(arr)
+    print("Sorted:" , arr)
