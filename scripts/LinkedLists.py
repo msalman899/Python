@@ -1,3 +1,4 @@
+# https://www.youtube.com/watch?v=AvGNrp4Al0A
 class Node:
     def __init__(self,data=None):
         self.data = data
@@ -120,6 +121,41 @@ class SingleLinkedList:
             return
         self.delete_only_node()
 
+    def display_list_reverse(self):
+        if self.start:
+            link_list = []
+            curr_node = self.start
+            prev_node = None
+
+            while curr_node:
+                forward_node = curr_node.next
+                curr_node.next = prev_node
+
+                prev_node = curr_node
+                curr_node = forward_node
+
+            self.start = prev_node
+            n = self.start
+            while n:
+                link_list.append(n.data)
+                n = n.next
+            print(*link_list)
+
+        else:
+            print("List is empty")
+
+    def display_list_reverse_recursion(self,curr_node,link_list=[]):
+        if self.start:
+            if curr_node is None:
+                return
+            self.display_list_reverse_recursion(curr_node.next,link_list)
+            print(curr_node.data)
+            #link_list.append(curr_node.data)
+            #print(*link_list)
+        else:
+            print("List is empty")
+
+
 def call_function(func):
     count = int(input("Enter the # of elements you want to add: "))
     i = 1
@@ -128,10 +164,43 @@ def call_function(func):
         getattr(sll,func)(data)
         i += 1
 
+def compare_lists(llist1, llist2):
+    n1,n2 = llist1,llist2
+    while n1 and n2:
+        if n1.data != n2.data:
+            return 0
+        n1 = n1.next
+        n2 = n2.next
+
+    return 1 if (n1 == None and n2 == None) else 0
+
+def mergeLists(head1, head2):
+    if head1.data <= head2.data:
+        n1, n2, start = head1, head2, head1
+    else:
+        n1, n2, start = head2, head1, head2
+
+    while n1.next:
+        forward = n1.next
+        while n2 and forward.data > n2.data:
+            n1.next = n2
+            n2 = n2.next
+            n1 = n1.next
+
+
+        n1.next = forward
+        n1 = n1.next
+
+    while n2:
+        n1.next = n2
+        n2 = n2.next
+        n1 = n1.next
+
+    return start
 
 selection=0
 sll = SingleLinkedList()
-while selection != 13:
+while selection != 20:
     print("\n Select the option from below list: \n"
     "1 - Diplay the list \n"
     "2 - Insert node into beginning of the list\n"
@@ -145,7 +214,9 @@ while selection != 13:
     "10 - Delete the only node \n"
     "11 - Delete in between the node \n"
     "12 - Delete the last node \n"
-    "13 - Quit")
+    "13 - print the linked list reverse \n"
+    "14 - print the linked list reverse (recursion function)\n"
+    "20 - Quit")
 
     selection = int(input("enter your choice: "))
 
@@ -181,4 +252,8 @@ while selection != 13:
         sll.delete_between_node(ref_node_data)
     elif selection == 12:
         sll.delete_last_node()
-
+    elif selection == 13:
+        sll.display_list_reverse()
+    elif selection == 14:
+        link_list=[]
+        sll.display_list_reverse_recursion(sll.start)
