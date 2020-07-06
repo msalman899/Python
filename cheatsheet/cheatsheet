@@ -1,3 +1,10 @@
+## Misc ##
+
+for i in range(4): 
+    print(i, end =" ") 
+    
+ outout --> 0 1 2 3 
+
 ## string , integer formatting ##
 
 https://www.geeksforgeeks.org/python-format-function/
