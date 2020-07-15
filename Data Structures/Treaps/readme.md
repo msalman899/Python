@@ -1,1 +1,1 @@
-Python implementation of Implicit treap
+Python implementation of Implicit treap (Implicit Cartesian Tree)
