@@ -284,3 +284,21 @@ print(now.strftime("%X"))
 #%I/%H - 12/24 Hour, %M - minute, %S - second, %p - local's AM/PM
 print(now.strftime("%I:%M:%S %p")) # 12-Hour:Minute:Second:AM
 print(now.strftime("%H:%M")) # 24-Hour:Minute
+
+## Handling JSON Data ##
+
+import json 
+numbers = [2, 3, 5, 7, 11, 13]
+filename = 'numbers.json' 
+with open(filename, 'w') as f_obj:
+    json.dump(numbers, f_obj)
+    
+ cat numbers.json
+ [2, 3, 5, 7, 11, 13]
+ 
+filename = 'numbers.json' 
+with open(filename) as f_obj:
+    numbers = json.load(f_obj)
+print(numbers) -->  [2, 3, 5, 7, 11, 13]
+    
+ 
