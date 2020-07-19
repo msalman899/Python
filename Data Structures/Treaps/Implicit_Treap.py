@@ -105,6 +105,11 @@ class Treap(object):
         self.inOrder(root.right, self.order)
         return self.order
 
+    
+#N,M=map(int,input().split())
+#A=list(map(int,input().split()))
+#Q=[list(map(int,input().split())) for i in range(M)]
+
 N,M=8,4
 A=[1,2,3,4,5,6,7,8]
 # Q=[[1,2,4]]
@@ -141,16 +146,15 @@ for q in Q:
         LRM = mytreap.merge(L,RM)
         print(mytreap.inOrder(LRM))
 
-# value_1,value_2=0,0
-# tmp1 = mytreap
-# tmp2 = mytreap
-# while tmp1:
-#     value_1 = tmp1.val
-#     tmp1 = tmp1.left
-#
-# while tmp2:
-#     value_2 = tmp2.val
-#     tmp2 = tmp2.right
+arr=mytreap.inOrder(mytreap.root)
+F, mid = mytreap.split(mytreap.root, 1)
+M, L = mytreap.split(mid, int(len(mytreap.inOrder(mid))-1))
+
+NF=mytreap.inOrder(F)
+NL=mytreap.inOrder(L)
+print(NF, NL)
+print(abs(int(NF)-int(NL)))
+print(*arr)
 
 
 # L,R=mytreap.split(mytreap.root,1)
