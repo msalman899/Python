@@ -1,9 +1,32 @@
+##########
 ## Misc ##
+##########
 
 for i in range(4): 
     print(i, end =" ") 
     
- outout --> 0 1 2 3 
+ output --> 0 1 2 3 
+ 
+####################################
+## Code profiling OR elapsed time ##
+####################################
+-- for elapsed time
+
+import time
+start_time = time.time()
+ - some code
+print("Processing time of : %.2f seconds." % (time.time() - start_time))
+
+-- for profiling
+import cProfile
+
+pr = cProfile.Profile()
+pr.enable()
+
+pr.disable()
+pr.create_stats()
+pr.print_stats()
+
 
 ## string , integer formatting ##
 
