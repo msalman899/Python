@@ -1,6 +1,6 @@
 ## Problem
 There's a string provided, we need to count the number of index/char between a subset of 2  string. The subset string will be "programmer" but it can be rephrased. in other words an index "i" will be count if both s[0:i-1] and s[i+1:n-1] subsets has enough char to make a string "programmer"
-e.g 
+e.g
 rtprrgoammerfpxprogrmmamerdr --> 'rtprrgoamme'rfpx'progrmmamer'dr --> 4
 programmerprogrammer --> 'programmer''programmer' --> 0
 prxogrxammxexrxxprogrxamxmxer --> prxogrxammxexr'xx'progrxamxmxer --> 2 
